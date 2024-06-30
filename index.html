@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider de Tarjetas</title>
+    <style>
+        body {
+            background-color: #3a3ff1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .slider {
+            position: relative;
+            width: 320px;
+            height: 240px;
+            perspective: 1000px;
+        }
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            backface-visibility: hidden;
+            transform: scale(0.9);
+            transition: transform 0.5s, z-index 0s 0.5s;
+        }
+        .card:nth-child(1) {
+            z-index: 3;
+            transform: translateX(0) scale(1);
+        }
+        .card:nth-child(2) {
+            z-index: 2;
+            transform: translateX(-100px) scale(0.9);
+        }
+        .card:nth-child(3) {
+            z-index: 1;
+            transform: translateX(100px) scale(0.9);
+        }
+        .card:hover {
+            transform: translateX(0) scale(1.1);
+            transition: transform 0.5s, z-index 0s;
+            z-index: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="card">
+            <p>Eres tan dulce que podrías endulzar hasta un limón.</p>
+        </div>
+        <div class="card">
+            <p>No necesitas un paracaídas para hacer paracaidismo. Necesitas un paracaídas para hacer paracaidismo 2 veces.</p>
+        </div>
+        <div class="card">
+            <p>La mayor exportación de Australia son los boomerangs. También son la mayor importación.</p>
+        </div>
+    </div>
+</body>
+</html>
